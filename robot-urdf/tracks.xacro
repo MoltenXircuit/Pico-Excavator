@@ -1,0 +1,264 @@
+<?xml version="1.0" ?>
+<robot name="pico-excavator" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- <xacro:include filename="$(find pico-excavator)/robot-urdf/materials.xacro" /> -->
+<!-- <xacro:include filename="$(find pico-excavator)/robot-urdf/excavator_URDF.gazebo" /> -->
+
+
+
+
+<link name="track_base">
+  <inertial>
+    <origin xyz="0.0 0.0 -0.025" rpy="0 0 0"/>
+    <mass value="0.120"/>
+    <inertia ixx="1.8e-4" iyy="2.2e-4" izz="3.6e-4" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Main.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="dk_green"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Main.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_1">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_1">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_2">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_2">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_3">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_3">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_4">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_4">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.036"/>
+    <inertia ixx="1.0e-5" iyy="1.0e-5" izz="1.0e-5" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Trackwheel.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="black"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Track-Wheel.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- //////track joints -->
+<joint name="track_main_to_base_link" type="revolute">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="track_base"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="1000" velocity="2.0" lower="-6.28" upper="6.28" />
+</joint>
+
+<joint name="wheel_left_1_to_track_base" type="continuous">
+  <origin xyz="-0.068204 -0.046753 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel_right_1_to_track_base" type="continuous">
+  <origin xyz="-0.068204  0.047027 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_right_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="wheel_left_2_to_track_base" type="continuous">
+  <origin xyz="-0.022899 -0.046753 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_left_2"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel_right_2_to_track_base" type="continuous">
+  <origin xyz="-0.022899  0.047027 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_right_2"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="wheel_left_3_to_track_base" type="continuous">
+  <origin xyz="0.022406 -0.046753 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_left_3"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel_right_3_to_track_base" type="continuous">
+  <origin xyz="0.022406  0.047027 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_right_3"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="wheel_left_4_to_track_base" type="continuous">
+  <origin xyz="0.067711 -0.046753 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_left_4"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="wheel_right_4_to_track_base" type="continuous">
+  <origin xyz="0.067711  0.047027 -0.025528" rpy="0 0 0"/>
+  <parent link="track_base"/>
+  <child link="wheel_right_4"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>

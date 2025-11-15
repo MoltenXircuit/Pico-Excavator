@@ -1,11 +1,13 @@
 <?xml version="1.0" ?>
-<robot name="Snowplow_URDF" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<robot name="pico-excavator" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
 <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
 </gazebo>
+
+
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>

@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<robot name="pico-excavator" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- <xacro:include filename="$(find pico-excavator)/robot-urdf/materials.xacro" /> -->
+
+
+<link name="arm_boom">
+  <inertial>
+    <origin xyz="-0.024409 -0.0068 0.062362" rpy="0 0 0"/>
+    <mass value="0.052"/>
+    <inertia ixx="4.5e-5" iyy="8e-5" izz="4.5e-5" iyz="0.0" ixy="0.0" ixz="3.4e-5"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Arm-MainBoom.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="dk_green"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Arm-Boom.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_dipper">
+  <inertial>
+    <origin xyz="-0.030025 -0.000006 -0.021942" rpy="0 0 0"/>
+    <mass value="0.043"/>
+    <inertia ixx="3.2e-5" iyy="6.7e-5" izz="3.8e-5" iyz="0.0" ixy="0.0" ixz="-3.1e-5"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Arm-Dipper.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="dk_green"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Arm-Dipper.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- //////arm joints -->
+<joint name="arm_boom_to_base_link" type="revolute">
+  <origin xyz="-0.020551 0.006788 0.013996" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arm_boom"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit effort="1000" velocity="2.0" lower="-0.6" upper="0.6" />
+</joint>
+
+<joint name="arm_dipper_to_arm_boom" type="revolute">
+  <origin xyz="-0.099712 -0.006798 0.113438" rpy="0 0 0"/>
+  <parent link="arm_boom"/>
+  <child link="arm_dipper"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit effort="1000" velocity="2.0" lower="-0.6" upper="0.6" />
+</joint>
+
+</robot>

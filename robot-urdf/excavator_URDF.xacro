@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<robot name="pico-excavator" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find pico-excavator)/robot-urdf/materials.xacro" />
+<!-- <xacro:include filename="$(find pico-excavator)/robot-urdf/excavator_URDF.gazebo" /> -->
+<xacro:include filename="tracks.xacro" />
+<xacro:include filename="arm.xacro" />
+
+<link name="base_link">
+</link>
+
+<link name="main">
+  <inertial>
+    <origin xyz="0.03 0.0 0.018" rpy="0 0 0"/>
+    <mass value="0.290"/>
+    <inertia ixx="0.00025" iyy="0.0003" izz="0.0005" iyz="0.0" ixy="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Main.dae" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <!-- <material name="dk_green"/> -->
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find pico-excavator)/robot-urdf/meshes/ExcavatorURDF_Main.stl" scale="1.0 1.0 1.0"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="main_to_base_link" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="main"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>
